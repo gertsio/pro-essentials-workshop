@@ -1,3 +1,3 @@
 // Explain the VSCode extension
 
-const num: number = "asdawd";
+const num: number = 23;

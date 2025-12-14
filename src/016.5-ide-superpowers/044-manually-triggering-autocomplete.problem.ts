@@ -6,14 +6,12 @@ type MyObj = {
 
 const acceptsObj = (obj: MyObj) => {};
 
-acceptsObj({
-  // Autocomplete in here!
-});
+acceptsObj({ foo: 'string', bar: 45, baz: true });
 
 document.addEventListener(
   // Autocomplete this string!
-  "",
+  'submit',
   (event) => {
     console.log(event);
-  },
+  }
 );

@@ -1,26 +1,29 @@
-function move(direction: string, distance: number) {
+type Direction = 'up' | 'left' | 'right' | 'down';
+
+function move(direction: Direction, distance: number) {
+  direction = 'left';
   // Move the specified distance in the given direction
 }
 
 // TESTS
 
-move("up", 10);
-move("left", 5);
+move('up', 10);
+move('left', 5);
 
 move(
   // @ts-expect-error - "up-right" is not a valid direction
-  "up-right",
-  10,
+  'up-right',
+  10
 );
 
 move(
-  // @ts-expect-error - "down-left" is not a valid direction
-  "down-left",
-  20,
+
+  'down-let',
+  20
 );
 
 move(
-  "up",
+  'up',
   // @ts-expect-error - "20" is not a valid distance
-  "20",
+  '20'
 );

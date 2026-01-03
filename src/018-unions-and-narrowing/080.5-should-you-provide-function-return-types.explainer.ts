@@ -1,15 +1,15 @@
 // 1. CON: Function return types can be wider than
 // what is actually returned
 
-import { Equal, Expect } from "@total-typescript/helpers";
+import { Equal, Expect } from '@total-typescript/helpers';
 
-const returnsStringOrNumber = (): string | number => {
+const returnsStringOrNumber = () => {
   return 1;
 };
 
 const value = returnsStringOrNumber();
 
-if (typeof value === "string") {
+if (typeof value === 'string') {
   type test = Expect<Equal<typeof value, never>>;
 
   // @ts-expect-error
@@ -18,15 +18,15 @@ if (typeof value === "string") {
 
 // 2. PRO: Function return types can help enforce the type of the function
 
-type UserRole = "admin" | "editor" | "viewer";
+type UserRole = 'admin' | 'editor' | 'viewer';
 
 function getPermissions(role: UserRole): string[] {
   switch (role) {
-    case "admin":
-      return ["create", "read", "update", "delete"];
-    case "editor":
-      return ["create", "read", "update"];
-    // case "viewer":
-    //   return ["read"];
+    case 'admin':
+      return ['create', 'read', 'update', 'delete'];
+    case 'editor':
+      return ['create', 'read', 'update'];
+    case "viewer":
+      return ["read"];
   }
 }

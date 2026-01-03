@@ -5,7 +5,6 @@ type UserPart = {
 };
 
 type UserPart2 = {
-  id: number;
   phone: string;
 };
 
